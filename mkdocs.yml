@@ -1,0 +1,192 @@
+site_name: StormBPMN Enterprise Documentation
+site_url: https://docs.stormbpmn.com
+site_description: Полная документация по установке, настройке и обслуживанию Enterprise-версии StormBPMN
+site_author: Команда StormBPMN
+
+# Directories
+docs_dir: ../stormbpmn-docs
+
+# Repository
+repo_name: stormbpmn/documentation
+repo_url: https://github.com/stormbpmn/documentation
+
+# Copyright
+copyright: Copyright &copy; 2019-2025 Команда StormBPMN
+
+# Hooks для загрузки навигации из toc.yaml
+hooks:
+  - hooks.py
+
+# Configuration
+theme:
+  name: material
+  language: ru
+  custom_dir: ../stormbpmn-docs-styles
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  
+  # Цветовая схема
+  palette:
+    # Светлая тема
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Переключить на тёмную тему
+    
+    # Тёмная тема
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Переключить на светлую тему
+  
+  # Функции
+  features:
+    # Навигация
+    - navigation.tracking     # Отслеживание якорей в URL
+    - navigation.tabs         # Вкладки навигации (верхний бар)
+    - navigation.tabs.sticky  # Закреплённые вкладки
+    - navigation.sections     # Разделы в боковой панели
+    - navigation.expand       # Автоматическое расширение разделов
+    - navigation.path         # Хлебные крошки
+    - navigation.indexes      # Индексные страницы разделов
+    - navigation.top          # Кнопка "Вверх"
+    - navigation.footer       # Навигация в подвале
+    
+    # Поиск
+    - search.suggest          # Подсказки при поиске
+    - search.highlight        # Подсветка результатов
+    - search.share            # Ссылка для шаринга
+    
+    # Заголовки
+    - toc.follow              # Автоматическое следование по TOC
+    
+    # Контент
+    - content.code.copy       # Кнопка копирования кода
+    - content.code.annotate   # Аннотации в коде
+    - content.tabs.link       # Связанные вкладки контента
+    - content.tooltips        # Подсказки
+
+# Plugins
+plugins:
+  - meta
+  # - social:  # Отключен - требует: pip install "mkdocs-material[imaging]"
+  #     concurrency: 4
+  #     cards: true
+  - tags:
+      tags_allowed:
+        - COMMUNITY
+        - BUSINESS
+        - ENTERPRISE
+  - search:
+      lang:
+        - ru
+        - en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: ru
+          default: true
+          name: Русский
+          build: true
+          site_name: "StormBPMN Enterprise - Документация"
+        - locale: en
+          default: false
+          name: English  
+          build: true
+          site_name: "StormBPMN Enterprise Documentation"
+          nav_translations:
+            Главная: Home
+            Начало работы: Getting Started
+            Установка: Installation
+            Конфигурация: Configuration
+            Эксплуатация: Operation
+            BPMN: BPMN
+            Рецепты: Recipes
+            История изменений: Changelog
+            Поддержка: Support
+  
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Дополнительные CSS и JS
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# Социальные ссылки и дополнительная информация
+extra:
+  social:
+    - icon: fontawesome/solid/envelope
+      link: mailto:help@stormbpmn.com
+      name: Email поддержка
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/stormbpmn_bot
+      name: Telegram Bot
+    - icon: fontawesome/solid/globe
+      link: https://stormbpmn.com
+      name: Официальный сайт
+  
+  version:
+    provider: mike
+    default: latest
+
+# Навигация загружается из /docs/ru/toc.yaml и /docs/en/toc.yaml через hooks.py
+# Переключатель языков создается автоматически плагином i18n
