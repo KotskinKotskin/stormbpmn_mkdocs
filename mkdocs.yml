@@ -13,6 +13,7 @@ repo_url: https://github.com/stormbpmn/documentation
 # Copyright
 copyright: Copyright &copy; 2019-2025 Команда StormBPMN
 
+
 # Hooks для загрузки навигации из toc.yaml
 hooks:
   - hooks.py
@@ -190,3 +191,25 @@ extra:
 
 # Навигация загружается из /docs/ru/toc.yaml и /docs/en/toc.yaml через hooks.py
 # Переключатель языков создается автоматически плагином i18n
+
+# nav:
+#   - Главная: ru/index.md
+#   - Начинающим пользователям: ru/begginers/index.md
+#   - Аналитикам: ru/analitics/index.md
+#   - Архитекторам: ru/architects/index.md
+#   - Администраторам:
+#     - ru/admins/index.md
+#     - Управление командой:
+#       - Добавление участников в команду: ru/mock/index.md
+#       - Изменить прав участникам команды: ru/mock/index.md
+#       - Создание и управление группами: ru/mock/index.md
+#       - Настройки командной работы: ru/mock/index.md
+#     - Работа с реестром бизнес-процессов:
+#       - Создание бизнес-процесса: ru/mock/index.md
+#       - Управление структурой хранения бизнес-процессов: ru/mock/index.md
+#   - Согласующим:
+#     - ru/approvals/index.md
+#     - Согласование процесса: ru/approvals/approve/index.md
+#   - Всем:
+#     - ru/all/index.md
+#     - Отправка процесса на согласование: ru/all/approval_request/index.md
