@@ -74,6 +74,7 @@ theme:
 # Plugins
 plugins:
   - meta
+  - macros
   # - social:  # Отключен - требует: pip install "mkdocs-material[imaging]"
   #     concurrency: 4
   #     cards: true
