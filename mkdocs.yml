@@ -1,17 +1,17 @@
-site_name: StormBPMN Enterprise Documentation
+site_name: Stormbpmn документация
 site_url: https://docs.stormbpmn.com
-site_description: Полная документация по установке, настройке и обслуживанию Enterprise-версии StormBPMN
-site_author: Команда StormBPMN
+site_description: Документация Stormbpmn
+site_author: Команда Stormbpmn
 
 # Directories
 docs_dir: ../stormbpmn-docs
 
 # Repository
-repo_name: stormbpmn/documentation
-repo_url: https://github.com/stormbpmn/documentation
+repo_name: KotskinKotskin/stormbpmn_new_doc
+repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
 
 # Copyright
-copyright: Copyright &copy; 2019-2025 Команда StormBPMN
+copyright: Copyright &copy; 2019-2026 Команда Stormbpmn
 
 
 # Hooks для загрузки навигации из toc.yaml
@@ -75,18 +75,32 @@ theme:
 plugins:
   - meta
   - macros
+  - glightbox
+  - autorefs
   # - social:  # Отключен - требует: pip install "mkdocs-material[imaging]"
   #     concurrency: 4
   #     cards: true
   - tags:
       tags_allowed:
-        - COMMUNITY
-        - BUSINESS
-        - ENTERPRISE
+        - Роли и элементы архитектуры
+        - Реестр процессов
+        - Редактор BPMN
+        - Спецфичи редактора BPMN
+        - Оргструктура
+        - FAQ - ответы на частые вопросы
+        - Гайды создания элементов диаграммы BPMN
+        - С чего начать
+        - Главная страница
+        - Процессная архитектура, реестр бизнес-процессов
+        - Cовместная работа над процессами - работа в команде
+        - Согласование и обсуждение
+        - Группы процессов, BCM модели
+        - Редактор UML
+        - Как исправить ошибки
+        - Регламенты
+        - Реестр бизнес-процессов
   - search:
-      lang:
-        - ru
-        - en
+      lang: [ru, en]
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   
   - i18n:
@@ -99,22 +113,12 @@ plugins:
           default: true
           name: Русский
           build: true
-          site_name: "StormBPMN Enterprise - Документация"
+          site_name: "Stormbpmn документация"
         - locale: en
           default: false
           name: English  
-          build: true
+          build: false
           site_name: "StormBPMN Enterprise Documentation"
-          nav_translations:
-            Главная: Home
-            Начало работы: Getting Started
-            Установка: Installation
-            Конфигурация: Configuration
-            Эксплуатация: Operation
-            BPMN: BPMN
-            Рецепты: Recipes
-            История изменений: Changelog
-            Поддержка: Support
   
   - minify:
       minify_html: true
@@ -168,6 +172,7 @@ markdown_extensions:
 # Дополнительные CSS и JS
 extra_css:
   - stylesheets/extra.css
+  - https://unpkg.com/primeicons/primeicons.css
 
 extra_javascript:
   - javascripts/mathjax.js

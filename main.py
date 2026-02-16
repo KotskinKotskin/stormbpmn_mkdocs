@@ -16,9 +16,6 @@ def define_env(env):
     # Получаем путь к директории с документацией
     docs_dir = Path(env.conf['docs_dir'])
     
-    # Добавляем общие переменные
-    env.variables['product'] = 'StormBPMN'
-    
     # Загружаем глобальные переменные
     global_vars_path = docs_dir / 'global_vars.yaml'
     if global_vars_path.exists():
@@ -27,6 +24,15 @@ def define_env(env):
             # Добавляем глобальные переменные в окружение
             for key, value in global_vars.items():
                 env.variables[key] = value
+
+    # Загружаем локальные переменные ru
+    local_ru_vars_path = docs_dir / 'ru/vars.yaml'
+    if local_ru_vars_path.exists():
+        with open(local_ru_vars_path, 'r', encoding='utf-8') as f:
+            local_vars = yaml.safe_load(f) or {}
+            # Добавляем глобальные переменные в окружение
+            for key, value in local_vars.items():
+                env.variables[key] = value            
 
 
 def notify_printer(env, template_path, **context):
@@ -67,7 +73,7 @@ def on_pre_page_macros(env):
         env: Объект окружения от mkdocs-macros плагина
     """
     # Проверяем наличие метаданных у страницы
-    if not hasattr(env, 'page') or not hasattr(env.page, 'meta'):
+    if not (hasattr(env, 'page') and hasattr(env.page, 'meta') and env.page.title):
         return
     
     # Собираем все сгенерированные предупреждения

@@ -10,3 +10,6 @@ wheels/
 .venv
 .cache
 site
+mkdocs
+uv.lock
+
