@@ -67,5 +67,8 @@ def update_nav_paths(nav_items, language):
             else:
                 updated[key] = value
         return updated
+    elif isinstance(nav_items, str) and nav_items.endswith('.md'):
+        # Добавляем префикс языка к путям файлов, если это строка .md
+        return f"{language}/{nav_items}"
     else:
         return nav_items
