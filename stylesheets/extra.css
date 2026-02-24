@@ -431,3 +431,16 @@ html {
 .admonition-container:has(> :nth-child(3):last-child) > :nth-child(3) {
   grid-column: 1 / -1;           /* третий занимает оба столбца */
 }
+
+.blue-toggle {
+  color: #007aff;
+  font-size: 1.3em;      /* подгони размер под текст */
+  vertical-align: -0.15em; /* выравнивание по baseline */
+}
+
+.md-label {
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+  font-size: 0.8em;
+  margin-left: 0.5em;
+}
