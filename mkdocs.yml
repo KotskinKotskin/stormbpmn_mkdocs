@@ -2,21 +2,10 @@ site_name: Stormbpmn документация
 site_url: https://docs.stormbpmn.com
 site_description: Документация Stormbpmn
 site_author: Команда Stormbpmn
-
-# Directories
 docs_dir: ../stormbpmn-docs
-
-# Repository
 repo_name: KotskinKotskin/stormbpmn_new_doc
 repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
-
-# Copyright
 copyright: Copyright &copy; 2019-2026 Команда Stormbpmn
-
-
-# Hooks для загрузки навигации из toc.yaml
-hooks:
-  - hooks.py
 
 # Configuration
 theme:
@@ -103,23 +92,6 @@ plugins:
       lang: [ru, en]
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   
-  - i18n:
-      docs_structure: folder
-      fallback_to_default: true
-      reconfigure_material: true
-      reconfigure_search: true
-      languages:
-        - locale: ru
-          default: true
-          name: Русский
-          build: true
-          site_name: "Stormbpmn документация"
-        - locale: en
-          default: false
-          name: English  
-          build: false
-          site_name: "StormBPMN Enterprise Documentation"
-  
   - minify:
       minify_html: true
       minify_js: true
@@ -195,28 +167,3 @@ extra:
   version:
     provider: mike
     default: latest
-
-# Навигация загружается из /docs/ru/toc.yaml и /docs/en/toc.yaml через hooks.py
-# Переключатель языков создается автоматически плагином i18n
-
-# nav:
-#   - Главная: ru/index.md
-#   - Начинающим пользователям: ru/begginers/index.md
-#   - Аналитикам: ru/analitics/index.md
-#   - Архитекторам: ru/architects/index.md
-#   - Администраторам:
-#     - ru/admins/index.md
-#     - Управление командой:
-#       - Добавление участников в команду: ru/mock/index.md
-#       - Изменить прав участникам команды: ru/mock/index.md
-#       - Создание и управление группами: ru/mock/index.md
-#       - Настройки командной работы: ru/mock/index.md
-#     - Работа с реестром бизнес-процессов:
-#       - Создание бизнес-процесса: ru/mock/index.md
-#       - Управление структурой хранения бизнес-процессов: ru/mock/index.md
-#   - Согласующим:
-#     - ru/approvals/index.md
-#     - Согласование процесса: ru/approvals/approve/index.md
-#   - Всем:
-#     - ru/all/index.md
-#     - Отправка процесса на согласование: ru/all/approval_request/index.md
