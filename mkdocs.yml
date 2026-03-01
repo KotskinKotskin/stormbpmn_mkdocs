@@ -7,6 +7,9 @@ repo_name: KotskinKotskin/stormbpmn_new_doc
 repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
 copyright: Copyright &copy; 2019-2026 Команда Stormbpmn
 
+hooks:
+  - hooks/auto_constraints.py
+
 # Configuration
 theme:
   name: material
