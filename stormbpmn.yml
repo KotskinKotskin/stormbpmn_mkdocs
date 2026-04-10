@@ -2,7 +2,7 @@ site_name: Stormbpmn документация
 site_url: https://docs.stormbpmn.com
 site_description: Документация Stormbpmn
 site_author: Команда Stormbpmn
-docs_dir: /root/mkdocs_out
+docs_dir: /root/output/mkdocs
 repo_name: KotskinKotskin/stormbpmn_new_doc
 repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
 copyright: Copyright &copy; 2019-2026 Команда Stormbpmn
@@ -14,7 +14,7 @@ hooks:
 theme:
   name: material
   language: ru
-  custom_dir: ../stormbpmn-docs-styles
+  custom_dir: /root/stormbpmn_project/stormbpmn_new_docs_css
   logo: assets/logo.svg
   favicon: assets/favicon.svg
 
@@ -62,7 +62,7 @@ theme:
 
 # Plugins
 plugins:
-- meta
+  # - meta  # Disabled: metadata now lives in frontmatter (migrated from .meta.yml)
 - macros
 - glightbox
 - autorefs
@@ -168,7 +168,7 @@ extra:
     default: latest
   media:
     screenshots:
-      diagram: /root/media/screenshots/diagram/diagram.psd
+      diagram: /root/stormbpmn_project/src_storage/diagram.psd
   process_editor:
     canvas:
       elements:
@@ -243,6 +243,7 @@ extra:
     upload_xlsx: <i class="pi pi-upload relative"></i> **Импорт реестра**
     download_xlsx: <i class="pi pi-download relative"></i> **Экспорт реестра**
   product_name: Stormbpmn
+  repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
   approval_editor:
     buttons:
       approve: <span style = "color:#22c55e">**Согласовать**</span>

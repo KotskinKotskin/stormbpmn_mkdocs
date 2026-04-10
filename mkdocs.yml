@@ -14,7 +14,7 @@ hooks:
 theme:
   name: material
   language: ru
-  custom_dir: ../stormbpmn-docs-styles
+  custom_dir: /root/stormbpmn_project/stormbpmn_new_docs_css
   logo: assets/logo.svg
   favicon: assets/favicon.svg
   
@@ -65,7 +65,7 @@ theme:
 
 # Plugins
 plugins:
-  - meta
+  # - meta  # Disabled: metadata now lives in frontmatter (migrated from .meta.yml)
   - macros
   - glightbox
   - autorefs
