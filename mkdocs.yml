@@ -2,7 +2,7 @@ site_name: Stormbpmn документация
 site_url: https://docs.stormbpmn.com
 site_description: Документация Stormbpmn
 site_author: Команда Stormbpmn
-docs_dir: ../stormbpmn-docs
+docs_dir: /root/out_test_doc
 repo_name: KotskinKotskin/stormbpmn_new_doc
 repo_url: https://github.com/KotskinKotskin/stormbpmn_new_doc
 copyright: Copyright &copy; 2019-2026 Команда Stormbpmn
